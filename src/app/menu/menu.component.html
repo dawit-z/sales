@@ -1,0 +1,9 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li *ngFor="let menu of menus" class="nav-item">
+          <a routerLink="{{ menu.route }}" class="nav-link">{{ menu.display }}</a>
+        </li>
+      </ul>
+  </div>
+</nav>
