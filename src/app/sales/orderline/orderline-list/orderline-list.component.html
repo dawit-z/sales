@@ -1,0 +1,24 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <table class="table table-sm">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Order</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let o of orderlines">
+      <td>{{ o.id }}</td>
+      <td>{{ o.orderId }}</td>
+      <td>{{ o.product }}</td>
+      <td>{{ o.quantity }}</td>
+      <td>{{ o.price | currency }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

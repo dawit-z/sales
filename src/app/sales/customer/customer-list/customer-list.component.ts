@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../customer.class';
 import { CustomerService } from '../customer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
@@ -9,9 +10,10 @@ import { CustomerService } from '../customer.service';
 })
 export class CustomerListComponent implements OnInit {
 
-  customers: Customer[] = [];
+  public customers: any;
 
-  constructor(private cService: CustomerService) { }
+  constructor(private cService: CustomerService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.cService.getCustomers().subscribe({
@@ -23,6 +25,10 @@ export class CustomerListComponent implements OnInit {
         console.error(err);
       }
     })
+  }
+
+  public update(customerId: number) {
+    this.router.navigate([`/customer/edit/${customerId}`]);
   }
 
 }
