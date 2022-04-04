@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from '../customer.class';
 import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
 
@@ -27,8 +26,28 @@ export class CustomerListComponent implements OnInit {
     })
   }
 
+  modalTitle: string = "";
+  activateCreateComponent: boolean = false;
+  customer: any;
+
+
+  modalAdd() {
+    this.customer = {
+      id: 0,
+      name: "",
+      active: true,
+      stateCode: "",
+      sales: 0
+    }
+    this.modalTitle = "Add Customer";
+    this.activateCreateComponent = true;
+  }
+
+  modalClose() {
+    this.activateCreateComponent = false;
+  }
+
   public update(customerId: number) {
     this.router.navigate([`/customer/edit/${customerId}`]);
   }
-
 }

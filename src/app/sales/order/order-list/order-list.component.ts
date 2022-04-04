@@ -14,8 +14,14 @@ export class OrderListComponent implements OnInit {
   constructor(private oService: OrderService) { }
 
   ngOnInit(): void {
-    this.oService.getOrders().subscribe(orders => {
-      this.orders = orders;
+    this.oService.getOrders().subscribe({
+      next: (res) => {
+        this.orders = res;
+        console.debug("Customers:", res)
+      },
+      error: (err) => {
+        console.error(err);
+      }
     })
   }
 

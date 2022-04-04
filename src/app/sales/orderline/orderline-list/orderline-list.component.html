@@ -9,6 +9,7 @@
       <th>Product</th>
       <th>Quantity</th>
       <th>Price</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +19,12 @@
       <td>{{ o.product }}</td>
       <td>{{ o.quantity }}</td>
       <td>{{ o.price | currency }}</td>
+      <td>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-secondary">View</button>
+          <button type="button" class="btn btn-primary ml-3">Edit</button>
+          <button type="button" class="btn btn-danger ml-3">Delete</button>
+        </div>
     </tr>
   </tbody>
 </table>

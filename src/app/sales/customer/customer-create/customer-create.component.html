@@ -1,2 +1,21 @@
-<app-menu></app-menu>
-<p>customer-create works!</p>
+<form>
+  <div class="mb-3">
+    <label class="form-label">Name:</label>
+    <input type="text" class="form-control" name="name" [(ngModel)]="name">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Active?</label>
+    <input type="text" class="form-control" name="active" [(ngModel)]="active">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">State</label>
+    <input type="text" class="form-control" name="stateCode" [(ngModel)]="stateCode">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Sales</label>
+    <input type="number" class="form-control" name="sales" [(ngModel)]="sales">
+  </div>
+  <button class="btn btn-primary" (click)="addCustomer()">
+    Add
+  </button>
+</form>

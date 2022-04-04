@@ -21,6 +21,7 @@ import { OrderlineListComponent } from './sales/orderline/orderline-list/orderli
 import { OrderlineCreateComponent } from './sales/orderline/orderline-create/orderline-create.component';
 import { OrderlineDetailComponent } from './sales/orderline/orderline-detail/orderline-detail.component';
 import { OrderlineEditComponent } from './sales/orderline/orderline-edit/orderline-edit.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { OrderlineEditComponent } from './sales/orderline/orderline-edit/orderli
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
