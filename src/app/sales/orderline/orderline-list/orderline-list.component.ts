@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Orderline } from '../orderline.class';
 import { OrderlineService } from '../orderline.service';
 
@@ -17,7 +17,7 @@ export class OrderlineListComponent implements OnInit {
     this.olService.getOrderlines().subscribe({
       next: (res) => {
         this.orderlines = res;
-        console.debug("Customers:", res)
+        console.debug("Orderlines:", res)
       },
       error: (err) => {
         console.error(err);

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Router } from '@angular/router';
+import { Customer } from '../customer.class';
 
 @Component({
   selector: 'app-customer-list',
@@ -9,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class CustomerListComponent implements OnInit {
 
-  public customers: any;
+  customers!: Customer[];
 
-  constructor(private cService: CustomerService,
+  constructor(
+    private cService: CustomerService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -43,7 +45,20 @@ export class CustomerListComponent implements OnInit {
     this.activateCreateComponent = true;
   }
 
-  modalClose() {
+  modalUpdate() {
+    this.customer = {
+      name: "",
+      active: true,
+      stateCode: "",
+      sales: 0
+    }
+    this.modalTitle = "Update Customer";
+    this.activateCreateComponent = true;
+  }
+
+
+
+  closeModal() {
     this.activateCreateComponent = false;
   }
 

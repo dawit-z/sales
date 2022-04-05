@@ -1,6 +1,14 @@
 <app-menu></app-menu>
-
 <div class="container">
+<h2 class="text-center">Orderlines</h2>
+
+<!-- Add New button -->
+<div class="d-flex">
+  <button routerLink="/orderline/create/" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Add
+</button>
+</div>
+
   <table class="table table-sm">
   <thead>
     <tr>
@@ -20,11 +28,9 @@
       <td>{{ o.quantity }}</td>
       <td>{{ o.price | currency }}</td>
       <td>
-        <div class="btn-group" role="group">
-          <button type="button" class="btn btn-secondary">View</button>
-          <button type="button" class="btn btn-primary ml-3">Edit</button>
-          <button type="button" class="btn btn-danger ml-3">Delete</button>
-        </div>
+        <a routerLink="/orderline/detail/{{ o.id }}">Detail</a> | 
+        <a routerLink="/orderline/edit/{{ o.id }}">Edit</a>
+      </td>
     </tr>
   </tbody>
 </table>

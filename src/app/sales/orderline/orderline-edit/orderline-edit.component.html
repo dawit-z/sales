@@ -1,1 +1,42 @@
-<p>orderline-edit works!</p>
+<app-menu></app-menu>
+<div>
+  <span id="pageTitle">Update Orderline</span>
+</div>
+
+<table class="table table-sm mx-3 mt-3">
+  <tr>
+    <th>Id:</th>
+    <td>
+      <input [(ngModel)]="orderline.id" name="id" type="number" disabled>
+    </td>
+  </tr>
+  <tr>
+ <th>OrderId:</th>
+ <td>
+   <input [(ngModel)]="orderline.orderId" type="number">
+ </td>
+</tr>
+   <tr>
+    <th>Product:</th>
+    <td>
+      <input [(ngModel)]="orderline.product" type="text">
+    </td>
+  </tr>
+     <tr>
+    <th>Quantity:</th>
+    <td>
+      <input [(ngModel)]="orderline.quantity" type="number">
+    </td>
+  </tr>
+     <tr>
+    <th>Price:</th>
+    <td>
+      <input [(ngModel)]="orderline.price" type="number">
+    </td>
+  </tr>
+</table>
+<div>
+  <button (click)="save()" class="btn btn-success">Save</button>
+</div>
+
+

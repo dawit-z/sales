@@ -9,7 +9,9 @@ import { Orderline } from './orderline.class';
 
 export class OrderlineService {
 
-  readonly orderlineUrl: string = "http://localhost:50020/api/orderlines";
+  public customers: any;
+
+  orderlineUrl: string = "http://localhost:50020/api/orderlines/";
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +19,7 @@ export class OrderlineService {
     return this.http.get<Orderline[]>(this.orderlineUrl);
   }
 
-  getOrderline(id: number): Observable<Orderline> {
+  get(id: number): Observable<Orderline> {
     return this.http.get<Orderline>(this.orderlineUrl + `${id}`);
   }
 
@@ -26,11 +28,11 @@ export class OrderlineService {
   }
 
   update(orderline: Orderline): Observable<any> {
-    return this.http.put<any>(`${this.orderlineUrl}/${orderline.id}`, orderline);
+    return this.http.put<any>(`${this.orderlineUrl}${orderline.id}`, orderline);
   }
 
   remove(id: number): Observable<unknown> {
-    return this.http.delete(`this.orderlineurl/${id}`);
+    return this.http.delete(this.orderlineUrl + `${id}`);
   }
 
 

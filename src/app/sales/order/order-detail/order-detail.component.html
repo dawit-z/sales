@@ -1,1 +1,46 @@
-<p>order-detail works!</p>
+<app-menu></app-menu>
+<div>
+  <h3 class="text-center">Order Detail</h3>
+</div>
+
+<table class="table table-sm mx-3 mt-3 table-striped w-50" *ngIf="order">
+  <tbody>
+    <tr>
+      <th>Id</th>
+      <td>
+        <input [(ngModel)]="order.id" type="number" disabled />
+      </td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>
+        <input type="text" [(ngModel)]="order.description" />
+      </td>
+    </tr>
+    <tr>
+      <th>Shipped</th>
+      <td>
+        <input type="checkbox" [(ngModel)]="order.shipped" />
+      </td>
+    </tr>
+    <tr>
+      <th>Total</th>
+      <td>
+        <input type="number" [(ngModel)]="order.total" />
+      </td>
+    </tr>
+    <tr>
+      <th>Customer</th>
+      <td><input [(ngModel)]="order.customer.name" type="text" disabled /></td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <button (click)="remove()" class="btn btn-danger">Delete</button>
+  <span *ngIf="showVerifyButton">
+    |
+    <button (click)="verifyRemove()" class="btn btn-danger">
+      Verify Delete
+    </button>
+  </span>
+</div>

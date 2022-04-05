@@ -9,15 +9,15 @@ import { OrderService } from '../order.service';
 })
 export class OrderListComponent implements OnInit {
 
-  public orders: any;
+  orders!: Order[];
 
   constructor(private oService: OrderService) { }
 
   ngOnInit(): void {
-    this.oService.getOrders().subscribe({
+    this.oService.list().subscribe({
       next: (res) => {
         this.orders = res;
-        console.debug("Customers:", res)
+        console.debug("Orders:", res)
       },
       error: (err) => {
         console.error(err);

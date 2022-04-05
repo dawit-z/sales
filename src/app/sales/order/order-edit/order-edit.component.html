@@ -1,1 +1,44 @@
-<p>order-edit works!</p>
+<app-menu></app-menu>
+<div>
+  <h3 class="text-center">Update Order</h3>
+</div>
+
+<table class="table table-sm mx-3 mt-3 table-striped" *ngIf="order">
+  <tr>
+    <th>Id</th>
+    <td>
+      <input [(ngModel)]="order.id" type="number" disabled />
+    </td>
+  </tr>
+  <tr>
+    <th>Description</th>
+    <td>
+      <input type="text" [(ngModel)]="order.description" />
+    </td>
+  </tr>
+  <tr>
+    <th>Shipped</th>
+    <td>
+      <input type="checkbox" [(ngModel)]="order.shipped" />
+    </td>
+  </tr>
+  <tr>
+    <th>Total</th>
+    <td>
+      <input type="number" [(ngModel)]="order.total" />
+    </td>
+  </tr>
+  <tr>
+    <th>Customer</th>
+    <td>
+      <select [(ngModel)]="order.customerId">
+        <option *ngFor="let c of customers" value="{{ c.id }}">
+          {{ c.name }}
+        </option>
+      </select>
+    </td>
+  </tr>
+</table>
+<div>
+  <button (click)="save()" class="btn btn-success">Save</button>
+</div>
