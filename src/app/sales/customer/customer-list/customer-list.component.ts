@@ -11,6 +11,7 @@ import { Customer } from '../customer.class';
 export class CustomerListComponent implements OnInit {
 
   customers!: Customer[];
+  search: string = "";
 
   constructor(
     private cService: CustomerService,

@@ -22,6 +22,9 @@ import { OrderlineCreateComponent } from './sales/orderline/orderline-create/ord
 import { OrderlineDetailComponent } from './sales/orderline/orderline-detail/orderline-detail.component';
 import { OrderlineEditComponent } from './sales/orderline/orderline-edit/orderline-edit.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BoolDisplayPipe } from './bool-display.pipe';
+import { CustomerSearchPipe } from './sales/customer/customer-search.pipe';
+import { EmployeeLoginComponent } from './sales/employee/employee-login/employee-login.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     OrderlineCreateComponent,
     OrderlineDetailComponent,
     OrderlineEditComponent,
+    BoolDisplayPipe,
+    CustomerSearchPipe,
+    EmployeeLoginComponent,
 
   ],
   imports: [
